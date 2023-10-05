@@ -1,0 +1,5 @@
+git clone "link_repository"
+git add .
+git commit -m "message"
+git push
+git pull
