@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>index</title>
+            <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Computer Shopping</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('view_cart') }}"><div id="cart">
+                        <a href="/view_cart">
+                          <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/non_2x/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" />
+                        </a>
+                        <span class="amount">{{ amount_products }}</span>
+                    </div></a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <h1>Product List</h1>
+        {% if is_admin %}
+            <a href="{{ url_for('edit_product', product_id=product.id) }}">Edit</a>
+        {% endif %}
+        <ul>
+            {% for product in products %}
+            <li>                                
+                <form action="/add_to_cart" method="post">
+                    <img src="{{ url_for('static', filename='img/shopping_basket.jpg') }}" alt="{{ product }}">
+                    <input type="hidden" name="product" value="{{ product }}">
+                    <button type="submit">{{ product }}</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <footer>
+            <p>Contact: info@computershopping.com</p>
+            <h2>Insert Data</h2>
+            <form action="/insert" method="post">
+                Name: <input type="text" name="name"><br>
+                Email: <input type="text" name="email"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </footer>
+    </body>
+</html>

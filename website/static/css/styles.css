@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+ul li img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+ul li button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul li button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer h2 {
+    margin-top: 0;
+}
+
+footer form {
+    margin-top: 20px;
+}
+
+footer form input[type="text"],
+footer form input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+footer form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon {
+    color: #333;
+    text-decoration: none;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Show cart dropdown when hovering over cart icon */
+.cart-container:hover .cart-dropdown {
+    display: block;
+}
+
+#cart {
+    position: fixed;
+    top: 20px; /* Adjust this value to set the distance from the top */
+    right: 20px; /* Adjust this value to set the distance from the right */
+  }
+
+  #cart img {
+    width: 50px; /* Adjust this value to set the size of the cart icon */
+    height: auto;
+  }
+
+
+.amount {
+    position: absolute;
+    top: -5px; /* Adjust this value as needed */
+    right: -5px; /* Adjust this value as needed */
+    background-color: black;
+    color: white;
+    border-radius: 80%;
+    padding: 3px 6px;
+    font-size: 8px;
+}

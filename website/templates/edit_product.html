@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Product</title>
+    </head>
+    <body>
+        <body>
+            <h1>Welcome to the Index Page</h1>
+            {% if user %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        {% if user.role == 'admin' %}
+                            <th>Action</th>
+                        {% endif %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in data %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        {% if user.role == 'admin' %}
+                            <td>
+                                <form action="/delete/{{ item.id }}" method="post">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Please login to view this page.</p>
+            {% endif %}
+            </body>
+        </form>
+    </body>
+</html>
